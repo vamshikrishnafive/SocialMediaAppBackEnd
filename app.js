@@ -27,7 +27,7 @@ const userRoute = require("./routes/user")
 
 // apiDocs
 app.get('/api', (req, res) => {
-  fs.readFile('Docs\Api.docs.json', (err, data) => {
+  fs.readFile('Docs/Api.docs.json', (err, data) => {
     if (err) {
       res.status(400).json({
         error: err
@@ -54,5 +54,5 @@ app.use(function (err, req, res, next) {
   })
 
 //Server
-const PORT = process.env.PORT || 8080 //enPO1FbrVAB2PS3o
+const PORT = process.env.PORT || 8080
 app.listen(PORT,()=>{console.log(`API server is listening on port : ${PORT}`)})
