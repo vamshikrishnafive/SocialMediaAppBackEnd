@@ -16,8 +16,8 @@ mongoose.connect(process.env.MONGO_URI, {
     useUnifiedTopology:true,
     useCreateIndex:true
 }).then(() => console.log("DataBase connected..!"))
-mongoose.connection.on('err', err => {
-    console.log(error)
+mongoose.connection.on('Error', error => {
+    console.log(error.message)
   })
   
 //incoming imports
