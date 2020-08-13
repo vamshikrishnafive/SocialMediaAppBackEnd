@@ -45,9 +45,9 @@ app.use(cookieParser())
 app.use(expressValidator())
 app.use(cors())
 app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Origin', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Origin', 'Content-Type');
+  res.setHeaderHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'GET,PUT,POST,DELETE');
+  res.setHeader('Access-Control-Allow-Origin', 'Content-Type');
   next();
 });
 app.use("/api", postRoute)
