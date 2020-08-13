@@ -44,6 +44,10 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(expressValidator())
 app.use(cors())
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+  next();
+});
 app.use("/api", postRoute)
 app.use("/api", authRoute)
 app.use("/api", userRoute)
