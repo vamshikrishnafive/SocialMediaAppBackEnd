@@ -45,7 +45,9 @@ app.use(cookieParser())
 app.use(expressValidator())
 app.use(cors())
 app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Origin', 'Content-Type');
   next();
 });
 app.use("/api", postRoute)
